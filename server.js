@@ -22,6 +22,12 @@ http.createServer((req, res) => {
     } else if (req.method === "DELETE") {
       handler.deleteIssue(res, id);
     }
+  } else {
+    console.log("Bad Request received. Returning 400.")
+    //handle invalid url requests
+    res.setHeader('content-type', 'Application/json');
+    res.statusCode = 400;
+    res.end();
   }
 }).listen(port, () => {
   console.log("Server is running on port:", port);
