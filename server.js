@@ -1,6 +1,7 @@
 const http = require("http");
 const handler = require("./requestHandlers")
 
+//port number
 const port = 8000;
 
 http.createServer((req, res) => {
